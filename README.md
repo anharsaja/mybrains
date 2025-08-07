@@ -1,69 +1,42 @@
-# React + TypeScript + Vite
+# 🧠 Brain Odyssey
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Brain Odyssey** adalah sebuah proyek web React yang berisi kumpulan tulisan, refleksi, dan eksplorasi imajinasi. Di sini, logika hanya menjadi penonton, dan fantasi memegang kendali. Setiap artikel mengajak pembaca untuk menelusuri labirin pikiran, menemukan ruang sunyi di tengah keramaian, dan menembus batas imajinasi.
 
-Currently, two official plugins are available:
+## ✨ Fitur Utama
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Daftar Artikel:** Jelajahi berbagai tulisan inspiratif dan reflektif.
+- **Detail Artikel:** Baca setiap artikel secara lengkap dengan tampilan yang nyaman.
+- **Navigasi Mudah:** Berpindah antar halaman dengan lancar menggunakan React Router.
+- **Desain Modern:** Tampilan minimalis dan responsif dengan Tailwind CSS.
+- **Footer Sticky:** Informasi selalu tersedia di bagian bawah halaman.
 
-## Expanding the ESLint configuration
+## 🚀 Cara Menjalankan
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+1. **Clone repository ini**
+   ```bash
+   git clone https://github.com/username/brain-odyssey.git
+   cd brain-odyssey
+   ```
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
+3. **Jalankan aplikasi**
+   ```bash
+   npm start
+   ```
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 📁 Struktur Folder
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+- `src/components` — Komponen utama seperti Header, Home, dan PostDetail.
+- `src/types` — Tipe data TypeScript untuk artikel.
+- `src/assets` — Logo dan aset gambar.
+- `src/data` — Data dummy artikel.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## 📝 Kontribusi
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Kontribusi sangat terbuka! Silakan buat pull request untuk menambah artikel, memperbaiki tampilan, atau menambah fitur baru.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+---
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+> **Brain Odyssey** — Hal yang mungkin dianggap keren atau tidak,
