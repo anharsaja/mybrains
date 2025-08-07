@@ -3,26 +3,28 @@ import type { Post } from '../types/types';
 export const posts: Post[] = [
     {
         id: 1,
-        title: 'Curahan Hati Pertama',
-        excerpt: 'Sebuah refleksi tentang makna kehidupan dan pencarian jati diri di tengah gemuruh modernitas.',
-        content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, urna eu tincidunt consectetur, nisi nisl aliquam eros, eu aliquam nisi nisl euismod nisi.',
+        title: 'Manusia dan Bayi dalam Dirinya',
+        excerpt: 'Di dalam setiap manusia, ada bayi kecil yang selalu ingin diperhatikan—lebih sibuk bercerita tentang dirinya, daripada mendengar kisah dunia di luar kepalanya.',
+        content: `Manusia adalah makhluk yang unik—menyimpan kerinduan untuk dipahami, namun sering lupa memahami.
+Di dalam diri setiap orang, masih tinggal seorang bayi kecil yang menangis minta diperhatikan, yang ingin semua mata tertuju padanya.
+
+Mungkin itu sebabnya kita begitu bersemangat bercerita tentang diri sendiri, lebih daripada mendengar cerita orang lain.
+Aku tidak tahu apa yang menjadi akar dari semua ini—hanya saja, di antara mereka yang seusia denganku, aku melihat sifat ini seperti cermin yang tak pernah retak: memantulkan diri, dan jarang sekali memantulkan dunia di luar dirinya.`,
         date: '15 Oktober 2023',
         readTime: '4 min read'
     },
+
+
+
     {
         id: 2,
-        title: 'Menembus Batas Imajinasi',
-        excerpt: 'Kisah tentang keberanian melampaui zona nyaman dan menemukan dunia baru di balik pikiran.',
-        content: 'Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae.',
+        title: 'Menguasai Bumi',
+        excerpt: '“Menguasai bumi bukanlah soal berkuasa, melainkan memahami bagaimana ia bernafas—agar kita bisa selaras dengannya, dan pada akhirnya, selaras dengan diri sendiri.”',
+        content: `Aku ingin menguasai bumi.
+Bukan sebagai penguasa yang duduk di singgasana, melainkan seperti seorang barista yang memahami kopi—mengetahui setiap aroma, suhu, dan rahasia di balik rasa.
+Yang kuinginkan adalah memahami bagaimana dunia bekerja, hingga aku bisa menjadi manusia yang selaras dengan alam. Ini bukan teori yang bisa dicatat, melainkan perasaan yang harus digali jauh ke dalam, bukan sekadar dicermati di permukaan.
+Semakin kita mengerti bagaimana alam bernafas, semakin mudah kita memahami orang-orang di sekitar kita. Dan pada akhirnya, kita pun belajar memahami diri sendiri—seperti bumi yang diam-diam memeluk segala isinya.`,
         date: '20 Oktober 2023',
         readTime: '6 min read'
-    },
-    {
-        id: 3,
-        title: 'Ruang Sunyi di Tengah Keramaian',
-        excerpt: 'Bagaimana menemukan ketenangan batin di tengah hiruk-pikuk kehidupan modern.',
-        content: 'Suspendisse potenti. Morbi mattis, massa nec commodo cursus, sapien erat cursus enim, eu cursus sapien erat nec enim.',
-        date: '25 Oktober 2023',
-        readTime: '5 min read'
     },
 ];

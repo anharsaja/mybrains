@@ -26,7 +26,7 @@ const Header: React.FC = () => {
                             </a>
                         </li>
                         <li>
-                            <a href="#" className="text-gray-600 hover:text-indigo-600 transition-colors duration-300">
+                            <a href="/Contact" className="text-gray-600 hover:text-indigo-600 transition-colors duration-300">
                                 Contact
                             </a>
                         </li>

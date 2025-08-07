@@ -22,7 +22,7 @@ const PostDetail: React.FC = () => {
 
                         <div className="prose prose-indigo max-w-none">
                             {post.content.split('\n').map((para, i) => (
-                                <p key={i} className="text-gray-700 leading-relaxed mb-4">{para}</p>
+                                <p key={i} className="mb-0">{para}</p>
                             ))}
                         </div>
                     </div>
