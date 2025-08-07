@@ -2,26 +2,13 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { posts } from './Posts';
 
-
-// const posts: Post[] = [
-//     {
-//         id: 1,
-//         title: 'Curahan Hati Pertama',
-//         excerpt: 'Sebuah refleksi tentang makna kehidupan dan pencarian jati diri di tengah gemuruh modernitas.',
-//         content: 'Lorem ipsum dolor sit amet...',
-//         date: '15 Oktober 2023',
-//         readTime: '4 min read'
-//     },
-//     // ... other posts
-// ];
-
 const Home: React.FC = () => {
     return (
         <div className="max-w-4xl mx-auto">
             <div className="text-center mb-12">
                 <h2 className="text-3xl font-light text-gray-800 mb-4">Kumpulan Tulisan</h2>
                 <p className="text-gray-500 max-w-2xl mx-auto">
-                    Koleksi curahan hati, renungan, dan kisah pendek yang menenangkan jiwa.
+                    Sebuah perjalanan tak bertepi menembus lorong-lorong sunyi imajinasi. Di sini, logika hanya duduk sebagai saksi bisu, sementara fantasi menggenggam kemudi, membawa jiwa berlayar ke samudra kemungkinan yang tak pernah terpetakan.
                 </p>
             </div>
 
