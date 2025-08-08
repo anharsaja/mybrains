@@ -25,7 +25,7 @@ const About: React.FC = () => {
                         <h2 className="text-3xl font-serif font-semibold text-gray-800 mb-6">Cerita Kami</h2>
                         <div className="space-y-4 text-gray-600 leading-relaxed">
                             <p>
-                                Brain Odyssey lahir pada tahun 2023, dari kerinduan untuk menjelajahi sudut-sudut liar dalam benak manusia—tempat di mana realitas melebur dengan fantasi.
+                                Nyinyir lahir pada tahun 2025, dari kerinduan untuk menjelajahi sudut-sudut liar dalam benak manusia—tempat di mana realitas melebur dengan fantasi.
                                 Ini adalah ruang digital yang tenang, namun penuh kejutan; tempat cerita tumbuh tanpa diburu waktu, bebas dari riuh dunia luar.
                             </p>
 
