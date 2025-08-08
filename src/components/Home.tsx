@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { supabase } from '../../supabaseClient';
 
 interface Post {
@@ -14,8 +14,6 @@ interface Post {
 const Home: React.FC = () => {
     const [posts, setPosts] = useState<Post[]>([]);
     const [loading, setLoading] = useState(true);
-    const [showSuccess, setShowSuccess] = useState(false);
-    const location = useLocation();
 
     useEffect(() => {
         const fetchPosts = async () => {
@@ -35,24 +33,12 @@ const Home: React.FC = () => {
         fetchPosts();
     }, []);
 
-    useEffect(() => {
-        if (location.state && location.state.success) {
-            setShowSuccess(true);
-            setTimeout(() => setShowSuccess(false), 3000);
-        }
-    }, [location.state]);
-
     if (loading) {
         return <p className="text-center mt-12">Memuat tulisan...</p>;
     }
 
     return (
         <div className="max-w-4xl mx-auto">
-            {showSuccess && (
-                <div className="fixed top-8 left-1/2 transform -translate-x-1/2 bg-green-500 text-white px-6 py-3 rounded-xl shadow-lg z-50">
-                    Tulisan berhasil ditambahkan!
-                </div>
-            )}
             <div className="text-center mb-12">
                 <h2 className="text-3xl font-light text-gray-800 mb-4">Kumpulan Tulisan</h2>
                 <p className="text-gray-500 max-w-2xl mx-auto">
