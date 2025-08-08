@@ -2,12 +2,22 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { supabase } from '../../supabaseClient';
 
+// Fungsi untuk format tanggal Indonesia
+const getTodayDate = () => {
+    const today = new Date();
+    return today.toLocaleDateString('id-ID', {
+        day: 'numeric',
+        month: 'long',
+        year: 'numeric'
+    });
+};
+
 const WritePost: React.FC = () => {
     const [form, setForm] = useState({
         title: '',
         excerpt: '',
         content: '',
-        date: '',
+        date: getTodayDate(), // otomatis tanggal sekarang
         readTime: ''
     });
     const [loading, setLoading] = useState(false);
@@ -43,7 +53,7 @@ const WritePost: React.FC = () => {
                 <input type="text" name="title" value={form.title} onChange={handleChange} required placeholder="Judul" className="w-full px-4 py-2 border rounded-lg" />
                 <input type="text" name="excerpt" value={form.excerpt} onChange={handleChange} required placeholder="Excerpt" className="w-full px-4 py-2 border rounded-lg" />
                 <textarea name="content" value={form.content} onChange={handleChange} required rows={6} placeholder="Isi tulisan..." className="w-full px-4 py-2 border rounded-lg" />
-                <input type="text" name="date" value={form.date} onChange={handleChange} required placeholder="Tanggal (misal: 8 Agustus 2025)" className="w-full px-4 py-2 border rounded-lg" />
+                <input type="text" name="date" value={form.date} onChange={handleChange} required placeholder="Tanggal" className="w-full px-4 py-2 border rounded-lg" readOnly />
                 <input type="text" name="readTime" value={form.readTime} onChange={handleChange} required placeholder="Waktu baca (misal: 5 min read)" className="w-full px-4 py-2 border rounded-lg" />
 
                 <button type="submit" className="bg-indigo-600 text-white px-6 py-3 rounded-full font-semibold shadow hover:bg-indigo-700 transition-colors duration-300" disabled={loading}>
