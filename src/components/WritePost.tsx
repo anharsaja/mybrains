@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { supabase } from '../../supabaseClient';
+import AlertTrial from './AlertTrial';
 
 // Fungsi untuk format tanggal Indonesia
 const getTodayDate = () => {
@@ -47,30 +48,33 @@ const WritePost: React.FC = () => {
     };
 
     return (
-        <div className="max-w-xl mx-auto bg-white rounded-xl shadow-md p-8 mt-12">
-            <h2 className="text-2xl font-bold text-gray-800 mb-4 text-center">Tulis Artikel Baru</h2>
-            <form onSubmit={handleSubmit} className="space-y-6">
-                <input type="text" name="title" value={form.title} onChange={handleChange} required placeholder="Judul" className="w-full px-4 py-2 border rounded-lg" />
-                <input type="text" name="excerpt" value={form.excerpt} onChange={handleChange} required placeholder="Excerpt" className="w-full px-4 py-2 border rounded-lg" />
-                <textarea name="content" value={form.content} onChange={handleChange} required rows={6} placeholder="Isi tulisan..." className="w-full px-4 py-2 border rounded-lg" />
-                <input
-                    type="text"
-                    name="date"
-                    value={form.date}
-                    onChange={handleChange}
-                    required
-                    placeholder="Tanggal"
-                    className="w-full px-4 py-2 border rounded-lg text-gray-500 bg-gray-100"
-                    readOnly
-                />
-                <input type="text" name="readTime" value={form.readTime} onChange={handleChange} required placeholder="Waktu baca (misal: 5 min read)" className="w-full px-4 py-2 border rounded-lg" />
+        <div className="max-w-4xl mx-auto">
+            <AlertTrial />
+            <div className="max-w-xl mx-auto bg-white rounded-xl shadow-md p-8 mt-12">
+                <h2 className="text-2xl font-bold text-gray-800 mb-4 text-center">Tulis Artikel Baru</h2>
+                <form onSubmit={handleSubmit} className="space-y-6">
+                    <input type="text" name="title" value={form.title} onChange={handleChange} required placeholder="Judul" className="w-full px-4 py-2 border rounded-lg" />
+                    <input type="text" name="excerpt" value={form.excerpt} onChange={handleChange} required placeholder="Excerpt" className="w-full px-4 py-2 border rounded-lg" />
+                    <textarea name="content" value={form.content} onChange={handleChange} required rows={6} placeholder="Isi tulisan..." className="w-full px-4 py-2 border rounded-lg" />
+                    <input
+                        type="text"
+                        name="date"
+                        value={form.date}
+                        onChange={handleChange}
+                        required
+                        placeholder="Tanggal"
+                        className="w-full px-4 py-2 border rounded-lg text-gray-500 bg-gray-100"
+                        readOnly
+                    />
+                    <input type="text" name="readTime" value={form.readTime} onChange={handleChange} required placeholder="Waktu baca (misal: 5 min read)" className="w-full px-4 py-2 border rounded-lg" />
 
-                <button type="submit" className="bg-indigo-600 text-white px-6 py-3 rounded-full font-semibold shadow hover:bg-indigo-700 transition-colors duration-300" disabled={loading}>
-                    {loading ? 'Menyimpan...' : 'Simpan'}
-                </button>
+                    <button type="submit" className="bg-indigo-600 text-white px-6 py-3 rounded-full font-semibold shadow hover:bg-indigo-700 transition-colors duration-300" disabled={loading}>
+                        {loading ? 'Menyimpan...' : 'Simpan'}
+                    </button>
 
-                {errorMsg && <p className="text-red-600 text-center mt-4">{errorMsg}</p>}
-            </form>
+                    {errorMsg && <p className="text-red-600 text-center mt-4">{errorMsg}</p>}
+                </form>
+            </div>
         </div>
     );
 };
