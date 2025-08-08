@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import logo from '../assets/outbox.png';
+import logo from '../assets/type.png';
 
 const Header: React.FC = () => {
     return (
@@ -10,7 +10,7 @@ const Header: React.FC = () => {
                     <div className="w-10 h-10 flex items-center justify-center mr-3">
                         <img src={logo} alt="Logo" className="w-full h-full object-cover" />
                     </div>
-                    <h1 className="text-2xl font-bold text-gray-800 tracking-tight">Brain Odyssey</h1>
+                    <h1 className="text-2xl font-bold text-gray-800 tracking-tight">Nyinyir</h1>
                 </Link>
 
                 <nav>

@@ -51,7 +51,7 @@ const WritePost: React.FC = () => {
         <div className="max-w-4xl mx-auto">
             <AlertTrial />
             <div className="max-w-xl mx-auto bg-white rounded-xl shadow-md p-8 mt-12">
-                <h2 className="text-2xl font-bold text-gray-800 mb-4 text-center">Tulis Artikel Baru</h2>
+                <h2 className="text-2xl font-bold text-gray-800 mb-4 text-center">Tulis Nyinyiran Baru</h2>
                 <form onSubmit={handleSubmit} className="space-y-6">
                     <input type="text" name="title" value={form.title} onChange={handleChange} required placeholder="Judul" className="w-full px-4 py-2 border rounded-lg" />
                     <input type="text" name="excerpt" value={form.excerpt} onChange={handleChange} required placeholder="Excerpt" className="w-full px-4 py-2 border rounded-lg" />
