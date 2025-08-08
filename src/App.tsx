@@ -5,6 +5,7 @@ import Home from './components/Home';
 import PostDetail from './components/PostDetail';
 import About from './components/About';
 import Contact from './components/Contact';
+import WritePost from './components/WritePost';
 
 
 
@@ -19,6 +20,7 @@ const App: React.FC = () => {
             <Route path="/post/:id" element={<PostDetail />} />
             <Route path="/About" element={<About />} />
             <Route path="/Contact" element={<Contact />} />
+            <Route path="/WritePost" element={<WritePost />} />
           </Routes>
         </main>
         <footer className="bg-gray-800 text-gray-300 py-6 mt-12">
