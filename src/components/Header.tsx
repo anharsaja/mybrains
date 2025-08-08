@@ -31,9 +31,12 @@ const Header: React.FC = () => {
                             </a>
                         </li> */}
                         <li>
-                            <a href="/WritePost" className="text-gray-600 hover:text-indigo-600 transition-colors duration-300">
+                            <Link
+                                to="/WritePost"
+                                className="bg-indigo-600 text-white px-6 py-2 rounded-full font-semibold shadow hover:bg-indigo-700 transition-colors duration-300"
+                            >
                                 Tulis
-                            </a>
+                            </Link>
                         </li>
                     </ul>
                 </nav>
