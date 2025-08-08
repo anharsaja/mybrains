@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { supabase } from '../../supabaseClient';
 
 const WritePost: React.FC = () => {
@@ -10,8 +11,8 @@ const WritePost: React.FC = () => {
         readTime: ''
     });
     const [loading, setLoading] = useState(false);
-    const [success, setSuccess] = useState(false);
     const [errorMsg, setErrorMsg] = useState<string | null>(null);
+    const navigate = useNavigate();
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         setForm({ ...form, [e.target.name]: e.target.value });
@@ -21,7 +22,6 @@ const WritePost: React.FC = () => {
         e.preventDefault();
         setLoading(true);
         setErrorMsg(null);
-        setSuccess(false);
 
         const { error } = await supabase
             .from('posts')
@@ -32,14 +32,7 @@ const WritePost: React.FC = () => {
         if (error) {
             setErrorMsg(error.message);
         } else {
-            setSuccess(true);
-            setForm({
-                title: '',
-                excerpt: '',
-                content: '',
-                date: '',
-                readTime: ''
-            });
+            navigate('/', { state: { success: true } });
         }
     };
 
@@ -57,7 +50,6 @@ const WritePost: React.FC = () => {
                     {loading ? 'Menyimpan...' : 'Simpan'}
                 </button>
 
-                {success && <p className="text-green-600 text-center mt-4">Tulisan berhasil disimpan!</p>}
                 {errorMsg && <p className="text-red-600 text-center mt-4">{errorMsg}</p>}
             </form>
         </div>
