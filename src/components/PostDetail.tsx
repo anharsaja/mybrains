@@ -61,9 +61,9 @@ const PostDetail: React.FC = () => {
     }
 
     return (
-        <div className="max-w-4xl mx-auto bg-white rounded-xl shadow-md overflow-hidden">
-            <div className="max-w-4xl mx-auto">
-                <AlertTrial />
+        <div className="max-w-4xl mx-auto">
+            <AlertTrial />
+            <div className="max-w-4xl mx-auto bg-white rounded-xl shadow-md overflow-hidden">
                 {/* Popup sukses */}
                 {showSuccess && (
                     <div className="fixed inset-0 flex items-center justify-center z-50">

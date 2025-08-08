@@ -22,6 +22,9 @@ const Home: React.FC = () => {
     const [inputSuggestion, setInputSuggestion] = useState('');
     const [sending, setSending] = useState(false);
 
+    // Tambahkan state baru untuk popup sukses
+    const [showSuccess, setShowSuccess] = useState(false);
+
     // Ambil data tulisan
     useEffect(() => {
         const fetchPosts = async () => {
@@ -85,16 +88,20 @@ const Home: React.FC = () => {
 
             if (error) {
                 console.error('Gagal mengirim saran:', error);
-                alert('Gagal mengirim saran, coba lagi.');
+                setShowBubble(false);
+                setShowSuccess(true);
             } else {
                 setSuggestions([inputSuggestion.trim(), ...suggestions]);
                 setInputSuggestion('');
                 setShowBubble(false);
-                alert('Terima kasih, saran Anda sudah terkirim!');
+                setShowSuccess(true);
             }
+            setTimeout(() => setShowSuccess(false), 2000);
         } catch (err) {
             console.error('Error tak terduga:', err);
-            alert('Terjadi kesalahan, coba lagi.');
+            setShowBubble(false);
+            setShowSuccess(true);
+            setTimeout(() => setShowSuccess(false), 2000);
         } finally {
             setSending(false);
         }
@@ -129,7 +136,7 @@ const Home: React.FC = () => {
                 <p className="text-gray-500 max-w-2xl mx-auto">
                     Sebuah perjalanan tak bertepi menembus lorong-lorong sunyi imajinasi.
                     Di sini, logika hanya duduk sebagai saksi bisu, sementara fantasi
-                    menggenggam kemudi, membawa jiwa berlayar ke samudra kemungkinan
+                    menggenggam kemudi, membawa jiwa berlayar ke samudera kemungkinan
                     yang tak pernah terpetakan.
                 </p>
             </div>
@@ -179,7 +186,7 @@ const Home: React.FC = () => {
             </div>
 
             {/* Bubble kritik/saran */}
-            <div className="fixed right-8 bottom-24 z-50 flex flex-col items-end space-y-3">
+            <div className="fixed right-8 bottom-3 z-50 flex flex-col items-end space-y-3">
                 {/* Daftar saran tampil di atas tombol bubble */}
                 {suggestions.slice(0, 3).map((s, i) => (
                     <div key={i} className="relative flex items-center max-w-xs">
@@ -239,12 +246,28 @@ const Home: React.FC = () => {
                                 </button>
                                 <button
                                     type="submit"
-                                    className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
+                                    disabled={sending}
+                                    className={`bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 ${sending ? 'opacity-50 cursor-not-allowed' : ''
+                                        }`}
                                 >
-                                    Kirim
+                                    {sending ? 'Mengirim...' : 'Kirim'}
                                 </button>
+
                             </div>
                         </form>
+                    </div>
+                </div>
+            )}
+
+            {/* Popup sukses kirim saran */}
+            {showSuccess && (
+                <div className="fixed top-6 right-8 z-50">
+                    <div className="bg-green-500 text-white px-4 py-2 rounded-full shadow flex items-center space-x-2">
+                        <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <circle cx="12" cy="12" r="10" fill="#22c55e" />
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" stroke="white" d="M9 12l2 2 4-4" />
+                        </svg>
+                        <span className="text-sm font-medium">Saran terkirim!</span>
                     </div>
                 </div>
             )}
